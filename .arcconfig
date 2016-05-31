@@ -1,0 +1,7 @@
+{
+  "phabricator.uri": "http://phabricator.almajo.com/",
+  "unit.engine": "GradleUnitTestEngine",
+  "load": [
+    "/usr/local/opt/arc/arc-lint"
+  ]
+}

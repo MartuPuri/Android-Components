@@ -1,0 +1,24 @@
+{
+    "linters": {
+        "json": {
+            "type": "json",
+            "include": [
+                "(^\\.arcconfig$)",
+                "(^\\.arclint$)"
+            ]
+        },
+        "gradle": {
+            "type": "gradle",
+            "lints": [ "checkstyle", "findbugs", "pmd", "android" ]
+        },
+        "chmod": {
+            "type": "chmod"
+        },
+        "merge-conflict": {
+            "type": "merge-conflict"
+        },
+        "spelling": {
+            "type": "spelling"
+        }
+    }
+}

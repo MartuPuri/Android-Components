@@ -1,0 +1,190 @@
+apply plugin: 'com.android.library'
+apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven'
+
+version "1.0.0"
+
+group 'com.masacre'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 10000
+        versionName project.version
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:recyclerview-v7:23.1.0'
+}
+
+//Findbugs
+tasks.withType(FindBugs){
+    description 'Run findbugs'
+    group 'verification'
+    ignoreFailures = true
+
+    classes = fileTree('build/intermediates/classes/debug/')
+    source = fileTree('src/main/java/')
+    classpath = files()
+
+    effort = 'max'
+
+    excludeFilter = file("${rootProject.projectDir}/config/findbugs/excludeFilter.xml")
+}
+
+task findbugs (type: FindBugs) {
+
+    reports {
+        xml.enabled = true
+        xml.withMessages = true
+        html.enabled = !xml.isEnabled()
+    }
+}
+
+//Checkstyle
+
+checkstyle {
+    configFile file("${rootProject.projectDir}/config/checkstyle/checkstyle.xml")
+    toolVersion = '6.17'
+}
+
+task checkstyle(type: Checkstyle) {
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    classpath = project.configurations.compile
+}
+
+// PMD
+
+task pmd (type: Pmd) {
+
+    description 'Run pmd'
+    group 'verification'
+    ignoreFailures = true
+
+    ruleSets = ["java-basic", "java-braces", "java-strings", "java-design", "java-unusedcode"]
+    source = fileTree('src/main/java')
+
+    reports {
+        xml.enabled = true
+        html.enabled = !xml.isEnabled()
+    }
+}
+
+// Generate sources
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from 'src/main/java'
+}
+
+task javadoc(type: Javadoc) {
+    source = 'sources'
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding = 'UTF-8'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom.project(pomConfiguration)
+    }
+}
+
+// To upload artifact
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            repository(url: mavenLocal().url)
+            pom.project(pomConfiguration)
+        }
+    }
+}
+
+def getPomConfiguration() {
+    return {
+        name 'Android Components'
+        packaging 'aar'
+        description 'Improvements of native android components'
+        url 'https://github.com/MartuPuri/Android-Components'
+
+        scm {
+            url 'scm:git@github.com:MartuPuri/Android-Components.git'
+            connection 'scm:git@github.com:MartuPuri/Android-Components.git'
+            developerConnection 'scm:git@github.com:MartuPuri/Android-Components.git'
+        }
+
+        licenses {
+            license {
+                name 'The Apache Software License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                distribution 'repo'
+            }
+        }
+
+        developers {
+            developer {
+                id 'MartuPuri'
+                name 'Martin Purita'
+                email 'martinpurita@gmail.com'
+            }
+        }
+    }
+}
+
+ext.bintrayUsername = has("bintrayUsername") ? bintrayUsername : ""
+ext.bintrayApiKey = has("bintrayApiKey") ? bintrayApiKey : ""
+
+bintray {
+
+    user = project.ext.bintrayUsername
+    key = project.ext.bintrayApiKey
+    publish = true
+    pkg {
+        repo = 'Masacre-Android'
+        name = 'android-components'
+        licenses = ['Apache-2.0']
+        issueTrackerUrl = 'https://github.com/MartuPuri/Android-Components/issues'
+        vcsUrl = 'https://github.com/MartuPuri/Android-Components.git'
+        version {
+            name = project.version
+            desc = 'Android Components Library'
+            released  = new Date()
+            vcsTag = project.version
+        }
+    }
+    configurations = ['archives']
+}

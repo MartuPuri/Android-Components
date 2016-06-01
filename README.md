@@ -1,3 +1,5 @@
+[![Download](https://api.bintray.com/packages/martupuri/Masacre-Android/android-components/images/download.svg) ](https://bintray.com/martupuri/Masacre-Android/android-components/_latestVersion)
+
 # Android Components
 
 Android components is a project which contains impromevents of native android components.

@@ -7,6 +7,19 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+/**
+ * <p>
+ * A <code>PullDownSwipeRefreshLayout</code> improve the {@link SwipeRefreshLayout} by adding
+ * a method to handle the pull down of the swipe refresh layout.
+ * </p>
+ *
+ * To handle this event you must register a {@link PullDownListener}
+ *
+ * @author Martin Purita - martinpurita@gmail.com
+ *
+ * @see PullDownListener
+ *
+ */
 public class PullDownSwipeRefreshLayout extends SwipeRefreshLayout {
 
 	private PullDownListener pullDownListener;

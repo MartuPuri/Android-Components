@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/MartuPuri/Android-Components.svg?branch=master)](https://travis-ci.org/MartuPuri/Android-Components)
 [![Download](https://api.bintray.com/packages/martupuri/Masacre-Android/android-components/images/download.svg) ](https://bintray.com/martupuri/Masacre-Android/android-components/_latestVersion)
 
 # Android Components
@@ -37,8 +38,6 @@ There are two exclusive ways of handle the click event.
 
 ### Sample
 
-
-
 ```java
 
 final ClickableRecyclerView recyclerView = (ClickableRecyclerView) findViewById(R.id.recycler_view);
@@ -49,8 +48,6 @@ final DCSeriesAdapter dcSeriesAdapter = new DCSeriesAdapter(this, Arrays.asList(
 recyclerView.setAdapter(dcSeriesAdapter);
 
 ```
-
-
 
 The class `DCSeriesAdapter` must extends from `ClickableRecyclerView.ClickableAdapter<DCViewHolder>`, and `DCViewHolder` must extends from`ClickableRecyclerView.ClickableViewHolder`
 
@@ -68,7 +65,6 @@ recyclerView.setOnViewHolderClickListener(new ClickableRecyclerView.OnViewHolder
 ```
 
 Now we have to implement the **onLongClick** in the `DCSeriesViewHolder`
-
 
 ```java
 public class DCSeriesViewHolder extends ClickableRecyclerView.ClickableViewHolder {
@@ -102,10 +98,33 @@ public class DCSeriesViewHolder extends ClickableRecyclerView.ClickableViewHolde
 }
 ```
 
+## PullDownSwipeRefreshLayout
+
+A PullDownSwipeRefreshLayout improve the **SwipeRefreshLayout** by adding a method to handle the pull down of the swipe refresh layout.
+
+To handle this event you must register a PullDownListener.
+
+### Sample
+
+```java
+
+final PullDownSwipeRefreshLayout layoutSwipeRefresh = (PullDownSwipeRefreshLayout) findViewById(R.id.pull_to_refresh);
+
+layoutSwipeRefresh.setPullDownListener(new PullDownSwipeRefreshLayout.PullDownListener() {
+    @Override
+    public void onPullDown() {
+        Toast.makeText(MainActivity.this, "Pull down", Toast.LENGTH_SHORT).show();
+    }
+});
+
+```
+
 # Versions
 
-*	1.0.0 
+*	1.0.0
     * ClickableRecyclerView
+*   1.0.1
+    * PullDownSwipeRefreshLayout
 
 # Copyright and License
 Copyright 2016 Martin Purita.

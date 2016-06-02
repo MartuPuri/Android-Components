@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/MartuPuri/Android-Components.svg?branch=master)](https://travis-ci.org/MartuPuri/Android-Components)
 [![Download](https://api.bintray.com/packages/martupuri/Masacre-Android/android-components/images/download.svg) ](https://bintray.com/martupuri/Masacre-Android/android-components/_latestVersion)
 
 # Android Components

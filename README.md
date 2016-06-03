@@ -72,7 +72,7 @@ public class DCSeriesViewHolder extends ClickableRecyclerView.ClickableViewHolde
     private final Context context;
     private final TextView seriesTitle;
 
-    public DummyViewHolder(final Context context, final View view) {
+    public DCSeriesViewHolder(final Context context, final View view) {
         super(view);
         this.context = context;
         this.seriesTitle = (TextView) view.findViewById(R.id.textview);

@@ -21,7 +21,7 @@ And then you can add the library as dependency
 
 ```
 dependencies {
-    compile 'com.masacre:android-components:1.0.0'
+    compile 'com.masacre:android-components:1.1.0'
 }
 ```
 

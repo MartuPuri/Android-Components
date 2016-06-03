@@ -119,12 +119,56 @@ layoutSwipeRefresh.setPullDownListener(new PullDownSwipeRefreshLayout.PullDownLi
 
 ```
 
+## ImagePicker
+
+The ImagePicker provides you a full component, that allow you to select a picture from each gallery and camera apps that your device has
+
+### Sample
+
+![ImagePickerSample](http://postimg.org/image/yraponizf)
+
+```java
+public class MainActivity extends AppCompatActivity {
+	private static final int PICK_IMAGE_REQUEST_CODE = 2352;
+
+	@Override
+	protected void onCreate(final Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		final Button pickPictureButton = (Button) findViewById(R.id.pick_picture_button);
+		pickPictureButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(final View v) {
+				final Intent pickImageIntent = ImagePicker.getPickImageIntent(MainActivity.this,
+						ImagePicker.ImagePickerIntentType.CAMERA, ImagePicker.ImagePickerIntentType.GALLERY);
+				startActivityForResult(pickImageIntent, PICK_IMAGE_REQUEST_CODE);
+			}
+		});
+	}
+
+	@Override
+	protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == PICK_IMAGE_REQUEST_CODE) {
+			try {
+				final BitmapImage bitmapImage = ImagePicker.getImageFromResult(this, resultCode, data);
+				//Use image
+			} catch (IOException e) {
+				//Handle error
+			}
+		}
+	}
+}
+```
+
 # Versions
 
 *	1.0.0
     * ClickableRecyclerView
 *   1.0.1
     * PullDownSwipeRefreshLayout
+    * ImagePicker
 
 # Copyright and License
 Copyright 2016 Martin Purita.

@@ -125,8 +125,6 @@ The ImagePicker provides you a full component, that allow you to select a pictur
 
 ### Sample
 
-![ImagePickerSample](http://postimg.org/image/yraponizf)
-
 ```java
 public class MainActivity extends AppCompatActivity {
 	private static final int PICK_IMAGE_REQUEST_CODE = 2352;

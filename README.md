@@ -3,7 +3,7 @@
 
 # Android Components
 
-Android components is a project which contains impromevents of native android components.
+Android components is an android library which contains improvements of native android components.
 
 # Usage
 

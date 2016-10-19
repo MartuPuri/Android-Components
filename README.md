@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/MartuPuri/Android-Components.svg?branch=master)](https://travis-ci.org/MartuPuri/Android-Components)
 [![Download](https://api.bintray.com/packages/martupuri/Masacre-Android/android-components/images/download.svg) ](https://bintray.com/martupuri/Masacre-Android/android-components/_latestVersion)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Components-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3888)
 
 # Android Components
 

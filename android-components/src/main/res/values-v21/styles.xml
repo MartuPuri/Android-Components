@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Roboto_Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>

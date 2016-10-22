@@ -1,63 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Roboto_Regular">
-        <item name="fontFamily">sans-serif</item>
-    </style>
-
-    <style name="Roboto_Light">
-        <item name="fontFamily">sans-serif-light</item>
-    </style>
-
-    <style name="Roboto_Condensed">
-        <item name="fontFamily">sans-serif-condensed</item>
-    </style>
-
-    <style name="Roboto_Black">
-        <item name="fontFamily">sans-serif-black</item>
-    </style>
-
     <style name="Roboto_Display_4" parent="Roboto_Light">
-        <item name="textSize">@dimen/material_display_4</item>
+        <item name="android:textSize">@dimen/material_display_4</item>
     </style>
 
     <style name="Roboto_Display_3" parent="Roboto_Regular">
-        <item name="textSize">@dimen/material_display_3</item>
+        <item name="android:textSize">@dimen/material_display_3</item>
     </style>
 
     <style name="Roboto_Display_2" parent="Roboto_Regular">
-        <item name="textSize">@dimen/material_display_2</item>
+        <item name="android:textSize">@dimen/material_display_2</item>
     </style>
 
     <style name="Roboto_Display_1" parent="Roboto_Regular">
-        <item name="textSize">@dimen/material_display_1</item>
+        <item name="android:textSize">@dimen/material_display_1</item>
     </style>
 
     <style name="Roboto_Headline" parent="Roboto_Regular">
-        <item name="textSize">@dimen/material_headline</item>
+        <item name="android:textSize">@dimen/material_headline</item>
     </style>
 
     <style name="Roboto_Title" parent="Roboto_Medium">
-        <item name="textSize">@dimen/material_title</item>
+        <item name="android:textSize">@dimen/material_title</item>
     </style>
 
     <style name="Roboto_Subheading" parent="Roboto_Regular">
-        <item name="textSize">@dimen/material_subheading</item>
+        <item name="android:textSize">@dimen/material_subheading</item>
     </style>
 
     <style name="Roboto_Body_2" parent="Roboto_Medium">
-        <item name="textSize">@dimen/material_body</item>
+        <item name="android:textSize">@dimen/material_body</item>
     </style>
 
     <style name="Roboto_Body_1" parent="Roboto_Regular">
-        <item name="textSize">@dimen/material_body</item>
+        <item name="android:textSize">@dimen/material_body</item>
     </style>
 
     <style name="Roboto_Caption" parent="Roboto_Regular">
-        <item name="textSize">@dimen/material_caption</item>
+        <item name="android:textSize">@dimen/material_caption</item>
     </style>
 
     <style name="Roboto_Button" parent="Roboto_Medium">
-        <item name="textSize">@dimen/material_button</item>
-        <item name="textAllCaps">true</item>
+        <item name="android:textSize">@dimen/material_button</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 </resources>

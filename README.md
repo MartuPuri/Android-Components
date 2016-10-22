@@ -179,6 +179,7 @@ Now, you can use all material typography *(Roboto family)* and the complete pall
 *	1.2.0
     * Material Typography
     * Material Colors
+    * Upgrade to compile sdk api level 24
     
 
 # Copyright and License

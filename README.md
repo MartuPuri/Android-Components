@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
 *	1.0.0
     * ClickableRecyclerView
-*   1.0.1
+*   1.1.0
     * PullDownSwipeRefreshLayout
     * ImagePicker
 

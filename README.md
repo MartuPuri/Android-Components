@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
 # Material Typography & Colors
 
-Now, you can use all material typography *(Roboto family)* and the complete pallete colors.
+Now, you can use all material typography *(Roboto family)* and the complete palete colors.
 
 ![alt text](../master/img/typography.png?raw=true)
 

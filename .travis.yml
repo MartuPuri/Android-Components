@@ -14,7 +14,7 @@ cache:
   directories:
     - $HOME/.gradle
 script:
-  - ./gradlew build
+    - ./gradlew build -x lint
 after_success:
 notifications:
   email:

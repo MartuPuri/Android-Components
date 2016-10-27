@@ -22,7 +22,7 @@ And then you can add the library as dependency
 
 ```
 dependencies {
-    compile 'com.masacre:android-components:1.2.0'
+    compile 'com.masacre:android-components:1.2.1'
 }
 ```
 
@@ -180,6 +180,8 @@ Now, you can use all material typography *(Roboto family)* and the complete pale
     * Material Typography
     * Material Colors
     * Upgrade to compile sdk api level 24
+*   1.2.1
+    * Update travis to api level 24
     
 
 # Copyright and License
